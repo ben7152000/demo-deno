@@ -1,0 +1,40 @@
+{
+  "name": "deno-gemini",
+  "version": "1.0.0",
+  "description": "Deno Gemini API 聊天服务",
+  "main": "main.ts",
+  "tasks": {
+    "start": "deno run --allow-net --allow-env main.ts",
+    "dev": "deno run --allow-net --allow-env --watch main.ts"
+  },
+  "imports": {},
+  "compilerOptions": {
+    "lib": [
+      "deno.window"
+    ],
+    "strict": true
+  },
+  "lint": {
+    "rules": {
+      "tags": [
+        "recommended"
+      ]
+    }
+  },
+  "fmt": {
+    "files": {
+      "include": [
+        "**/*.ts",
+        "**/*.js"
+      ]
+    },
+    "options": {
+      "useTabs": false,
+      "lineWidth": 80,
+      "indentWidth": 2,
+      "semiColons": true,
+      "singleQuote": false,
+      "proseWrap": "preserve"
+    }
+  }
+}
