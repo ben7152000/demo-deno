@@ -1,0 +1,24 @@
+name: Deploy to Deno Deploy
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  id-token: write
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Deploy
+        uses: denoland/deployctl@v1
+        with:
+          project: demo-deno-1      # ← 換成你在 Deno Dashboard 的專案名（要完全一致）
+          entrypoint: main.ts       # ← 你的入口檔路徑，如在 src 就改成 src/main.ts
+          prod: true
